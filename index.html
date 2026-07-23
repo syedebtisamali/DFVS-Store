@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ================= PRIMARY SEO META ================= -->
+<title>DFVSSTORE | Buy, Sell &amp; Trade Used Books Online</title>
+<meta name="description" content="DFVSSTORE is an online marketplace to buy, sell, and trade used books. Search by title or author, filter by genre and rating, and find your next great read at a fair price.">
+<meta name="keywords" content="buy used books online, sell used books, used bookstore, book marketplace, trade books online, second hand books, DFVSSTORE">
+<meta name="author" content="Syed Ebtisam Ali">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://dfvsstore.netlify.app">
+
+<!-- ================= OPEN GRAPH ================= -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DFVSSTORE">
+<meta property="og:title" content="DFVSSTORE | Buy, Sell & Trade Used Books Online">
+<meta property="og:description" content="An online marketplace to buy, sell, and trade used books. Search, filter, and list your own books in seconds.">
+<meta property="og:url" content="https://dfvsstore.netlify.app">
+<meta property="og:image" content="https://dfvsstore.netlify.appog-image.png">
+<meta property="og:locale" content="en_US">
+
+<!-- ================= TWITTER CARD ================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DFVSSTORE | Buy, Sell & Trade Used Books Online">
+<meta name="twitter:description" content="Buy, sell, and trade used books. Search by title/author, filter by genre and rating.">
+<meta name="twitter:image" content="https://dfvsstore.netlify.appog-image.png">
+
+<!-- ================= ICONS / PWA ================= -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0B1120">
+
+<!-- ================= STRUCTURED DATA ================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "DFVSSTORE",
+  "url": "https://dfvsstore.netlify.app",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://dfvsstore.netlify.app?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "DFVSSTORE",
+  "url": "https://dfvsstore.netlify.app",
+  "logo": "https://dfvsstore.netlify.appfavicon.svg",
+  "founder": { "@type": "Person", "name": "Syed Ebtisam Ali" }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0B1120;
+    --panel:#111A2E;
+    --panel-2:#16213A;
+    --paper:#F6F7FB;
+    --white:#FFFFFF;
+    --ink:#131A29;
+    --slate:#6B7280;
+    --teal:#17B8A6;
+    --teal-2:#0E8577;
+    --amber:#F5A623;
+    --border:rgba(255,255,255,.08);
+    --border-light:rgba(19,26,41,.08);
+    --radius:14px;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter',sans-serif; line-height:1.6;
+  }
+  h1,h2,h3,.font-display{ font-family:'Space Grotesk',sans-serif; letter-spacing:-0.01em; }
+  .font-mono{ font-family:'JetBrains Mono',monospace; }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--teal); color:#fff; }
+  .container{ max-width:1180px; margin:0 auto; padding:0 20px; }
+
+  /* ---------------- Nav ---------------- */
+  nav.topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,17,32,.85); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .topnav .container{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; }
+  .brand{ display:flex; align-items:center; gap:10px; color:#fff; }
+  .brand-mark{
+    width:34px; height:34px; border-radius:9px;
+    background:linear-gradient(135deg, var(--teal), var(--teal-2));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-weight:700; color:#04231F;
+  }
+  .brand-name{ font-weight:700; font-size:1.15rem; }
+  .nav-actions{ display:flex; gap:10px; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:6px;
+    border-radius:10px; padding:10px 18px; font-weight:600; font-size:.88rem;
+    cursor:pointer; border:1px solid transparent; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:active{ transform:scale(.97); }
+  .btn-primary{ background:linear-gradient(135deg, var(--teal), var(--teal-2)); color:#04231F; box-shadow:0 8px 20px -8px rgba(23,184,166,.55); }
+  .btn-primary:hover{ box-shadow:0 10px 26px -6px rgba(23,184,166,.7); }
+  .btn-ghost-dark{ background:transparent; color:#EAF0FA; border-color:var(--border); }
+  .btn-ghost-dark:hover{ background:rgba(255,255,255,.06); }
+  .btn-ghost-light{ background:#fff; color:var(--ink); border-color:var(--border-light); }
+  .btn-ghost-light:hover{ background:#F0F2F7; }
+  .btn-danger{ background:#FEECEC; color:#B3261E; }
+  .btn-danger:hover{ background:#FBDADA; }
+  .btn-sm{ padding:6px 12px; font-size:.76rem; border-radius:8px; }
+
+  /* ---------------- Hero ---------------- */
+  header.hero{
+    background:
+      radial-gradient(60% 60% at 85% 10%, rgba(23,184,166,.25), transparent 60%),
+      radial-gradient(50% 50% at 5% 0%, rgba(245,166,35,.15), transparent 55%),
+      var(--bg);
+    color:#fff; padding:72px 0 90px; overflow:hidden;
+  }
+  .hero-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.12em;
+    color:var(--teal); text-transform:uppercase; margin-bottom:14px; display:inline-block;
+  }
+  .hero h1{ font-size:clamp(2.1rem,4.5vw,3.2rem); font-weight:700; line-height:1.12; margin:0 0 18px; }
+  .hero p.lead{ color:#B9C2D4; font-size:1.05rem; max-width:480px; margin:0 0 28px; }
+  .hero-stats{ display:flex; gap:28px; margin-top:34px; flex-wrap:wrap; }
+  .hero-stats .stat b{ font-family:'Space Grotesk',sans-serif; font-size:1.4rem; display:block; }
+  .hero-stats .stat span{ color:#8B96AC; font-size:.78rem; }
+
+  .search-hero{
+    display:flex; gap:8px; background:rgba(255,255,255,.06); border:1px solid var(--border);
+    padding:6px; border-radius:14px; max-width:460px;
+  }
+  .search-hero input{
+    flex:1; background:transparent; border:none; color:#fff; padding:10px 12px; font-size:.92rem; outline:none;
+  }
+  .search-hero input::placeholder{ color:#8B96AC; }
+
+  /* Floating card stack — signature hero element */
+  .stack{ position:relative; height:340px; }
+  .stack-card{
+    position:absolute; width:230px; padding:18px; border-radius:16px;
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+    backdrop-filter:blur(6px); box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
+    animation:floaty 6s ease-in-out infinite;
+  }
+  .stack-card .cover-chip{ width:36px;height:36px;border-radius:9px; margin-bottom:12px; }
+  .stack-card h4{ font-size:.95rem; margin:0 0 4px; color:#fff; }
+  .stack-card p{ font-size:.74rem; color:#9FAAC0; margin:0 0 10px; }
+  .stack-card .rating{ font-family:'JetBrains Mono',monospace; font-size:.72rem; color:var(--amber); }
+  .c1{ top:10px; left:20px; transform:rotate(-8deg); z-index:1; animation-delay:0s; }
+  .c2{ top:70px; left:150px; transform:rotate(5deg); z-index:2; animation-delay:1.2s; }
+  .c3{ top:150px; left:40px; transform:rotate(-3deg); z-index:3; animation-delay:2.4s; }
+  @keyframes floaty{ 0%,100%{ transform-origin:center; translate:0 0; } 50%{ translate:0 -10px; } }
+  @media (prefers-reduced-motion:reduce){ .stack-card{ animation:none; } }
+  @media (max-width:900px){ .stack{ display:none; } }
+
+  /* ---------------- Filters ---------------- */
+  section.filters-section{ background:#fff; border-bottom:1px solid var(--border-light); }
+  .filters-bar{
+    display:flex; flex-wrap:wrap; gap:12px; align-items:end; padding:22px 0;
+  }
+  .field{ display:flex; flex-direction:column; gap:5px; min-width:150px; flex:1; }
+  .field label{ font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.05em; color:var(--slate); }
+  .field input, .field select{
+    border:1px solid #DDE2EC; border-radius:10px; padding:9px 12px; font-size:.88rem;
+    font-family:'Inter',sans-serif; background:#fff; color:var(--ink);
+  }
+  .field input:focus, .field select:focus{ outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(23,184,166,.15); }
+
+  /* ---------------- Catalog ---------------- */
+  section.catalog{ padding:44px 0 70px; }
+  .catalog-head{ display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:10px; margin-bottom:18px; }
+  .status-text{ color:var(--slate); font-size:.85rem; }
+  .grid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:20px; }
+
+  .card{
+    background:#fff; border:1px solid var(--border-light); border-radius:var(--radius);
+    overflow:hidden; transition:transform .18s ease, box-shadow .18s ease;
+    display:flex; flex-direction:column;
+  }
+  .card:hover{ transform:translateY(-5px); box-shadow:0 20px 40px -18px rgba(19,26,41,.25); }
+  .card-cover{ height:88px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; position:relative; }
+  .card-cover::after{ content:""; position:absolute; inset:0; background:linear-gradient(160deg, rgba(255,255,255,.15), rgba(0,0,0,.15)); }
+  .card-initial{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.7rem; color:#fff; z-index:1; }
+  .genre-tag{ font-family:'JetBrains Mono',monospace; font-size:.6rem; background:rgba(0,0,0,.28); color:#fff; padding:3px 8px; border-radius:99px; z-index:1; }
+  .card-body{ padding:16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .card-body h3{ font-size:1.02rem; margin:0; }
+  .card-author{ color:var(--slate); font-size:.82rem; margin:0; }
+  .card-meta{ display:flex; gap:8px; align-items:center; font-family:'JetBrains Mono',monospace; font-size:.68rem; color:var(--slate); flex-wrap:wrap; }
+  .stars{ color:var(--amber); letter-spacing:1px; }
+  .review{ background:var(--paper); border-radius:8px; padding:8px 10px; font-size:.76rem; color:#555; font-style:italic;
+    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .card-footer{ display:flex; justify-content:space-between; align-items:center; padding-top:6px; border-top:1px solid var(--border-light); }
+
+  .empty-state, .error-state{
+    grid-column:1/-1; text-align:center; padding:60px 20px; border:1px dashed #DDE2EC; border-radius:var(--radius); color:var(--slate);
+  }
+  .empty-state h3{ color:var(--ink); margin-bottom:6px; }
+
+  .skeleton{ background:linear-gradient(90deg,#EEF1F6 25%,#E4E8F0 37%,#EEF1F6 63%); background-size:400% 100%; animation:shimmer 1.3s ease infinite; }
+  @keyframes shimmer{ 0%{background-position:100% 0;} 100%{background-position:0 0;} }
+
+  .pagination{ display:flex; justify-content:center; align-items:center; gap:16px; margin-top:34px; }
+  .pagination span{ font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--slate); }
+
+  /* ---------------- Modals ---------------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(11,17,32,.55); backdrop-filter:blur(3px);
+    display:none; align-items:center; justify-content:center; padding:16px; z-index:100;
+  }
+  .modal-overlay.open{ display:flex; }
+  .modal{
+    background:#fff; border-radius:18px; max-width:520px; width:100%; padding:26px; max-height:90vh; overflow-y:auto;
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.4);
+  }
+  .modal-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }
+  .modal-head h2{ font-size:1.3rem; margin:0; }
+  .modal-close{ background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--slate); line-height:1; }
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:480px){ .form-grid{ grid-template-columns:1fr; } }
+  .form-field{ display:flex; flex-direction:column; gap:5px; margin-bottom:12px; }
+  .form-field label{ font-size:.72rem; font-weight:600; text-transform:uppercase; color:var(--slate); letter-spacing:.05em; }
+  .form-field input, .form-field textarea{
+    border:1px solid #DDE2EC; border-radius:10px; padding:9px 12px; font-family:'Inter',sans-serif; font-size:.9rem;
+  }
+  .form-field input:focus, .form-field textarea:focus{ outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(23,184,166,.15); }
+  .note{ font-size:.72rem; color:var(--slate); margin-top:8px; }
+  .admin-pill{ display:inline-flex; align-items:center; gap:6px; background:#E7FBF7; color:var(--teal-2); font-size:.72rem; font-weight:600; padding:4px 10px; border-radius:99px; }
+  .admin-pill .dot{ width:6px;height:6px;border-radius:50%; background:var(--teal-2); }
+
+  /* ---------------- Footer ---------------- */
+  footer{ background:var(--bg); color:#8B96AC; padding:46px 0 26px; margin-top:0; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding-bottom:30px; border-bottom:1px solid var(--border); }
+  @media (max-width:700px){ .footer-grid{ grid-template-columns:1fr; } }
+  footer h4{ color:#fff; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; margin:0 0 12px; }
+  footer ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; font-size:.85rem; }
+  footer ul li a:hover{ color:#fff; }
+  .footer-bottom{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding-top:20px; font-size:.78rem; }
+  .footer-bottom strong{ color:#EAF0FA; }
+
+  .sr-only{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="Primary">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="DFVSSTORE home">
+      <span class="brand-mark" aria-hidden="true">D</span>
+      <span class="brand-name">DFVSSTORE</span>
+    </a>
+    <div class="nav-actions">
+      <button class="btn btn-ghost-dark" onclick="openAdminModal()">Admin</button>
+      <button class="btn btn-primary" onclick="openBookModal()">+ Sell a Book</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Buy · Sell · Trade</span>
+      <h1>A better place to find your next used book.</h1>
+      <p class="lead">DFVSSTORE connects readers who are done with a book to readers who are just getting started. Search the catalog, filter by genre or rating, and list your own books in under a minute.</p>
+
+      <div class="search-hero">
+        <input type="text" id="searchInput" placeholder="Search by title or author…" oninput="onFilterChange()" aria-label="Search books">
+        <button class="btn btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">Search</button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b id="statTotal">—</b><span>Books listed</span></div>
+        <div class="stat"><b id="statAuthors">—</b><span>Authors</span></div>
+        <div class="stat"><b id="statGenres">—</b><span>Genres</span></div>
+      </div>
+    </div>
+
+    <div class="stack" aria-hidden="true">
+      <div class="stack-card c1"><div class="cover-chip" style="background:linear-gradient(135deg,#F5A623,#C97A0F)"></div><h4>Project Hail Mary</h4><p>Andy Weir</p><span class="rating">★★★★★ 4.8</span></div>
+      <div class="stack-card c2"><div class="cover-chip" style="background:linear-gradient(135deg,#17B8A6,#0E8577)"></div><h4>Atomic Habits</h4><p>James Clear</p><span class="rating">★★★★★ 4.6</span></div>
+      <div class="stack-card c3"><div class="cover-chip" style="background:linear-gradient(135deg,#6C7BF5,#3E4CC7)"></div><h4>Educated</h4><p>Tara Westover</p><span class="rating">★★★★★ 4.7</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="filters-section">
+  <div class="container">
+    <div class="filters-bar">
+      <div class="field">
+        <label for="authorFilter">Author</label>
+        <select id="authorFilter" onchange="onFilterChange()"><option value="All">All authors</option></select>
+      </div>
+      <div class="field">
+        <label for="genreFilter">Genre</label>
+        <select id="genreFilter" onchange="onFilterChange()"><option value="All">All genres</option></select>
+      </div>
+      <div class="field">
+        <label for="ratingFilter">Min rating</label>
+        <select id="ratingFilter" onchange="onFilterChange()">
+          <option value="0">Any</option>
+          <option value="4.5">4.5+</option>
+          <option value="4">4.0+</option>
+          <option value="3">3.0+</option>
+          <option value="2">2.0+</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="sortSelect">Sort by</label>
+        <select id="sortSelect" onchange="onFilterChange()">
+          <option value="default">Default</option>
+          <option value="title_asc">Title A–Z</option>
+          <option value="author_asc">Author A–Z</option>
+          <option value="year_desc">Newest edition</option>
+          <option value="year_asc">Oldest edition</option>
+          <option value="rating_desc">Rating: high to low</option>
+          <option value="rating_asc">Rating: low to high</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="pageSizeSelect">Per page</label>
+        <select id="pageSizeSelect" onchange="onPageSizeChange()">
+          <option value="8">8</option>
+          <option value="16">16</option>
+          <option value="32">32</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="catalog container" id="catalog">
+    <div class="catalog-head">
+      <h2>All Books</h2>
+      <span class="status-text" id="statusText">Loading catalog…</span>
+    </div>
+    <div id="booksGrid" class="grid"></div>
+    <div class="pagination">
+      <button class="btn btn-ghost-light" id="prevBtn" onclick="changePage(-1)" disabled>← Previous</button>
+      <span id="pageIndicator">Page 1</span>
+      <button class="btn btn-ghost-light" id="nextBtn" onclick="changePage(1)">Next →</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:10px;">
+          <span class="brand-mark" aria-hidden="true">D</span>
+          <span class="brand-name" style="color:#fff;">DFVSSTORE</span>
+        </div>
+        <p style="max-width:320px; font-size:.85rem;">An online marketplace to buy, sell, and trade used books — built to help every book find its next reader.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#catalog">Browse Catalog</a></li>
+          <li><a href="#" onclick="openBookModal(); return false;">Sell a Book</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <ul>
+          <li><a href="sitemap.xml">Sitemap</a></li>
+          <li><a href="robots.txt">Robots.txt</a></li>
+          <li><a href="#" onclick="openAdminModal(); return false;">Admin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 DFVSSTORE. All rights reserved.</span>
+      <span>Developed by <strong>Syed Ebtisam Ali</strong></span>
+    </div>
+  </div>
+</footer>
+
+<!-- Sell / Edit Book Modal -->
+<div class="modal-overlay" id="bookModalOverlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="bookModalTitle">Sell a Book</h2>
+      <button class="modal-close" onclick="closeBookModal()" aria-label="Close">&times;</button>
+    </div>
+    <form id="bookForm" onsubmit="handleFormSubmit(event)">
+      <div class="form-field"><label>Title</label><input type="text" id="f_title" required></div>
+      <div class="form-field"><label>Author</label><input type="text" id="f_author" required></div>
+      <div class="form-grid">
+        <div class="form-field"><label>Published year</label><input type="number" id="f_year" required></div>
+        <div class="form-field"><label>Pages</label><input type="number" id="f_pages" required></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-field"><label>Rating (1.0–5.0)</label><input type="number" step="0.1" min="1" max="5" id="f_rating" required></div>
+        <div class="form-field"><label>Genres (comma separated)</label><input type="text" id="f_genres" placeholder="Fiction, Mystery"></div>
+      </div>
+      <div class="form-field"><label>Review / condition note</label><textarea id="f_reviews" rows="3"></textarea></div>
+      <div style="display:flex; gap:10px; margin-top:6px;">
+        <button type="submit" class="btn btn-primary" id="submitBtn">List Book</button>
+        <button type="button" class="btn btn-ghost-light" onclick="closeBookModal()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Admin Modal -->
+<div class="modal-overlay" id="adminModalOverlay">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-head">
+      <h2>Admin Access</h2>
+      <button class="modal-close" onclick="closeAdminModal()" aria-label="Close">&times;</button>
+    </div>
+    <div id="adminLoginArea">
+      <form onsubmit="handleAdminLogin(event)">
+        <div class="form-field"><label>Password</label><input type="password" id="adminPassword" required></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Log in</button>
+      </form>
+      <p class="note">Client-side check for this demo only — not real authentication. The password is readable in the page source.</p>
+    </div>
+    <div id="adminLoggedInArea" style="display:none;">
+      <span class="admin-pill"><span class="dot"></span>Admin mode is on</span>
+      <p class="note">Edit and delete controls are now visible on every book card.</p>
+      <button class="btn btn-ghost-light" style="margin-top:14px; width:100%;" onclick="handleAdminLogout()">Log out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const API_BASE_URL = "https://bookstore-api-one.vercel.app";
+  const ADMIN_PASSWORD = "BS3"; // demo-only client-side gate, visible in source
+
+  let allBooks = [];
+  let adminMode = false;
+  let editingId = null;
+  let state = { search:"", author:"All", genre:"All", minRating:0, sort:"default", page:1, pageSize:8 };
+  const COVER_COLORS = [
+    ["#17B8A6","#0E8577"], ["#6C7BF5","#3E4CC7"], ["#F5A623","#C97A0F"],
+    ["#EF5A6F","#B5384A"], ["#3B4A6B","#232E47"]
+  ];
+
+  function escapeHTML(str){
+    return String(str).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+  function hashStr(s){ let h=0; for(let i=0;i<s.length;i++){ h=(h*31+s.charCodeAt(i))>>>0; } return h; }
+  function coverGradient(title){ const p = COVER_COLORS[hashStr(title||"?") % COVER_COLORS.length]; return `linear-gradient(150deg, ${p[0]}, ${p[1]})`; }
+
+  // Pre-fill search from ?q= (matches the JSON-LD SearchAction target)
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('q')) { state.search = urlParams.get('q').toLowerCase(); }
+
+  async function loadCatalog(){
+    document.getElementById("statusText").innerText = "Loading catalog…";
+    document.getElementById("booksGrid").innerHTML = Array(8).fill(0).map(()=>`
+      <div class="card"><div class="skeleton" style="height:88px;"></div>
+      <div class="card-body"><div class="skeleton" style="height:14px;width:70%;border-radius:6px;"></div>
+      <div class="skeleton" style="height:12px;width:40%;border-radius:6px;"></div>
+      <div class="skeleton" style="height:40px;border-radius:6px;"></div></div></div>`).join("");
+    try{
+      let page=1, totalPages=1, collected=[];
+      do{
+        const res = await fetch(`${API_BASE_URL}/books?page=${page}&limit=100`);
+        if(!res.ok) throw new Error(`server responded ${res.status}`);
+        const result = await res.json();
+        collected = collected.concat(result.data || []);
+        totalPages = result.total_pages || 1;
+        page++;
+      } while(page <= totalPages);
+
+      allBooks = collected;
+      document.getElementById("searchInput").value = state.search || "";
+      buildFilterOptions();
+      updateHeroStats();
+      render();
+    }catch(err){
+      console.error(err);
+      document.getElementById("statusText").innerText = "Error loading catalog";
+      document.getElementById("booksGrid").innerHTML = `
+        <div class="error-state"><h3>We couldn't reach the catalog.</h3><p>${escapeHTML(err.message)}</p></div>`;
+    }
+  }
+
+  function updateHeroStats(){
+    document.getElementById("statTotal").innerText = allBooks.length;
+    document.getElementById("statAuthors").innerText = new Set(allBooks.map(b=>b.author).filter(Boolean)).size;
+    document.getElementById("statGenres").innerText = new Set(allBooks.flatMap(b=>b.genres||[])).size;
+  }
+
+  function buildFilterOptions(){
+    const authors = [...new Set(allBooks.map(b=>b.author).filter(Boolean))].sort();
+    const genres = [...new Set(allBooks.flatMap(b=>b.genres||[]))].sort();
+    document.getElementById("authorFilter").innerHTML = `<option value="All">All authors</option>` +
+      authors.map(a=>`<option value="${escapeHTML(a)}">${escapeHTML(a)}</option>`).join("");
+    document.getElementById("genreFilter").innerHTML = `<option value="All">All genres</option>` +
+      genres.map(g=>`<option value="${escapeHTML(g)}">${escapeHTML(g)}</option>`).join("");
+  }
+
+  function onFilterChange(){
+    state.search = document.getElementById("searchInput").value.trim().toLowerCase();
+    state.author = document.getElementById("authorFilter").value;
+    state.genre = document.getElementById("genreFilter").value;
+    state.minRating = parseFloat(document.getElementById("ratingFilter").value) || 0;
+    state.sort = document.getElementById("sortSelect").value;
+    state.page = 1;
+    render();
+  }
+  function onPageSizeChange(){ state.pageSize = parseInt(document.getElementById("pageSizeSelect").value); state.page=1; render(); }
+  function changePage(delta){ state.page += delta; render(); }
+
+  function getFilteredSorted(){
+    let list = allBooks.filter(b=>{
+      const s = !state.search || (b.title||"").toLowerCase().includes(state.search) || (b.author||"").toLowerCase().includes(state.search);
+      const a = state.author==="All" || b.author===state.author;
+      const g = state.genre==="All" || (b.genres||[]).includes(state.genre);
+      const r = (b.rating||0) >= state.minRating;
+      return s && a && g && r;
+    });
+    switch(state.sort){
+      case "title_asc": list.sort((a,b)=>(a.title||"").localeCompare(b.title||"")); break;
+      case "author_asc": list.sort((a,b)=>(a.author||"").localeCompare(b.author||"")); break;
+      case "year_desc": list.sort((a,b)=>(b.published_year||0)-(a.published_year||0)); break;
+      case "year_asc": list.sort((a,b)=>(a.published_year||0)-(b.published_year||0)); break;
+      case "rating_desc": list.sort((a,b)=>(b.rating||0)-(a.rating||0)); break;
+      case "rating_asc": list.sort((a,b)=>(a.rating||0)-(b.rating||0)); break;
+    }
+    return list;
+  }
+
+  function render(){
+    const filtered = getFilteredSorted();
+    const totalPages = Math.max(1, Math.ceil(filtered.length / state.pageSize));
+    state.page = Math.min(state.page, totalPages);
+    const start = (state.page-1)*state.pageSize;
+    const pageItems = filtered.slice(start, start+state.pageSize);
+    const grid = document.getElementById("booksGrid");
+
+    if(filtered.length===0){
+      grid.innerHTML = `<div class="empty-state"><h3>No books match your filters</h3><p>Try clearing the search or picking a different genre.</p></div>`;
+    }else{
+      grid.innerHTML = pageItems.map(cardHTML).join("");
+    }
+    document.getElementById("statusText").innerText =
+      `Showing ${filtered.length ? start+1 : 0}–${Math.min(start+pageItems.length, filtered.length)} of ${filtered.length} (${allBooks.length} total)`;
+    document.getElementById("pageIndicator").innerText = `Page ${state.page} of ${totalPages}`;
+    document.getElementById("prevBtn").disabled = state.page<=1;
+    document.getElementById("nextBtn").disabled = state.page>=totalPages;
+  }
+
+  function cardHTML(book){
+    const genre = (book.genres && book.genres[0]) || "General";
+    const initial = (book.title||"?").trim().charAt(0).toUpperCase();
+    const ratingRounded = Math.max(0, Math.min(5, Math.round(book.rating||0)));
+    const stars = "★".repeat(ratingRounded) + "☆".repeat(5-ratingRounded);
+    return `
+      <article class="card">
+        <div class="card-cover" style="background:${coverGradient(book.title)}">
+          <span class="card-initial">${initial}</span>
+          <span class="genre-tag">${escapeHTML(genre)}</span>
+        </div>
+        <div class="card-body">
+          <h3>${escapeHTML(book.title)}</h3>
+          <p class="card-author">by ${escapeHTML(book.author||"Unknown")}</p>
+          <div class="card-meta">
+            <span class="stars">${stars}</span><span>${book.rating!=null?book.rating.toFixed(1):"–"}</span>
+            <span>·</span><span>${book.published_year||"–"}</span>
+            <span>·</span><span>${book.pages||"?"}p</span>
+          </div>
+          <p class="review">"${escapeHTML(book.reviews||"No review available.")}"</p>
+          <div class="card-footer">
+            ${adminMode ? `
+              <div style="display:flex; gap:6px;">
+                <button class="btn btn-ghost-light btn-sm" onclick='startEdit(${JSON.stringify(book._id)})'>Edit</button>
+                <button class="btn btn-danger btn-sm" onclick='deleteBook(${JSON.stringify(book._id)})'>Delete</button>
+              </div>
+            ` : `<span></span>`}
+            <button class="btn btn-primary btn-sm" onclick="alert('Order request sent for &quot;${escapeHTML(book.title)}&quot;!')">Buy now</button>
+          </div>
+        </div>
+      </article>`;
+  }
+
+  // ---------- Add / Edit ----------
+  function readForm(){
+    return {
+      title: document.getElementById("f_title").value,
+      author: document.getElementById("f_author").value,
+      published_year: parseInt(document.getElementById("f_year").value),
+      pages: parseInt(document.getElementById("f_pages").value),
+      rating: parseFloat(document.getElementById("f_rating").value),
+      reviews: document.getElementById("f_reviews").value,
+      genres: document.getElementById("f_genres").value.split(",").map(s=>s.trim()).filter(Boolean)
+    };
+  }
+
+  async function handleFormSubmit(e){
+    e.preventDefault();
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = true;
+    const payload = readForm();
+    try{
+      let res;
+      if(editingId){
+        submitBtn.innerText = "Saving…";
+        res = await fetch(`${API_BASE_URL}/books/${editingId}`, { method:"PUT", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
+      }else{
+        submitBtn.innerText = "Listing…";
+        res = await fetch(`${API_BASE_URL}/books`, { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify(payload) });
+      }
+      if(res.ok){
+        closeBookModal();
+        await loadCatalog();
+      }else{
+        alert(`Request failed (status ${res.status}).${editingId ? " The update endpoint may not exist on this API yet." : ""}`);
+      }
+    }catch(err){
+      alert("Network error: " + err.message);
+    }finally{
+      submitBtn.disabled = false;
+      submitBtn.innerText = editingId ? "Save Changes" : "List Book";
+    }
+  }
+
+  function startEdit(id){
+    const book = allBooks.find(b=>b._id===id);
+    if(!book) return;
+    editingId = id;
+    document.getElementById("f_title").value = book.title||"";
+    document.getElementById("f_author").value = book.author||"";
+    document.getElementById("f_year").value = book.published_year||"";
+    document.getElementById("f_pages").value = book.pages||"";
+    document.getElementById("f_rating").value = book.rating||"";
+    document.getElementById("f_genres").value = (book.genres||[]).join(", ");
+    document.getElementById("f_reviews").value = book.reviews||"";
+    document.getElementById("bookModalTitle").innerText = "Edit Book";
+    document.getElementById("submitBtn").innerText = "Save Changes";
+    document.getElementById("bookModalOverlay").classList.add("open");
+  }
+
+  async function deleteBook(id){
+    if(!confirm("Delete this book permanently?")) return;
+    try{
+      const res = await fetch(`${API_BASE_URL}/books/${id}`, { method:"DELETE" });
+      if(!res.ok) throw new Error(`status ${res.status}`);
+      await loadCatalog();
+    }catch(err){ alert("Failed to delete book: " + err.message); }
+  }
+
+  function openBookModal(){
+    editingId = null;
+    document.getElementById("bookForm").reset();
+    document.getElementById("bookModalTitle").innerText = "Sell a Book";
+    document.getElementById("submitBtn").innerText = "List Book";
+    document.getElementById("bookModalOverlay").classList.add("open");
+  }
+  function closeBookModal(){ document.getElementById("bookModalOverlay").classList.remove("open"); }
+
+  function openAdminModal(){ document.getElementById("adminModalOverlay").classList.add("open"); }
+  function closeAdminModal(){ document.getElementById("adminModalOverlay").classList.remove("open"); }
+
+  function handleAdminLogin(e){
+    e.preventDefault();
+    const val = document.getElementById("adminPassword").value;
+    if(val === ADMIN_PASSWORD){
+      adminMode = true;
+      document.getElementById("adminLoginArea").style.display = "none";
+      document.getElementById("adminLoggedInArea").style.display = "block";
+      render();
+    }else{
+      alert("Incorrect password.");
+    }
+    document.getElementById("adminPassword").value = "";
+  }
+  function handleAdminLogout(){
+    adminMode = false;
+    document.getElementById("adminLoginArea").style.display = "block";
+    document.getElementById("adminLoggedInArea").style.display = "none";
+    closeAdminModal();
+    render();
+  }
+
+  // Close modals on backdrop click / Escape
+  document.querySelectorAll(".modal-overlay").forEach(ov=>{
+    ov.addEventListener("click", (e)=>{ if(e.target===ov) ov.classList.remove("open"); });
+  });
+  document.addEventListener("keydown", (e)=>{
+    if(e.key==="Escape") document.querySelectorAll(".modal-overlay.open").forEach(ov=>ov.classList.remove("open"));
+  });
+
+  loadCatalog();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "DFVSSTORE - Buy, Sell & Trade Used Books",
+  "short_name": "DFVSSTORE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#0B1120",
+  "description": "An online marketplace to buy, sell, and trade used books.",
+  "icons": [
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
